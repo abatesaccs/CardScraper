@@ -8,6 +8,18 @@ Andrew Bates
 
 This project will allow users to scrape Magic the Gathering card data from Gatherer.Wizards.com based on specific search criteria
 
+### Example card data
+
+Card Name: Black Lotus  
+Mana Cost:  
+Converted Mana Cost: 0  
+Types: Artifact  
+Card Text: , Sacrifice Black Lotus: Add three mana of any one color.  
+Expansion: Limited Edition Alpha  
+Rarity: Rare  
+All Sets:  
+Artist: Christopher Rush  
+
 ### MVP
 
 The ability to return a single cards data from Gatherer  
