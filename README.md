@@ -2,23 +2,25 @@
 
 Andrew Bates
 
-## Goal
+## Project Description
+
+### Goal
 
 This project will allow users to scrape Magic the Gathering card data from Gatherer.Wizards.com based on specific search criteria
 
-## MVP
+### MVP
 
 The ability to return a single cards data from Gatherer  
 Store the returned cards data in a database  
 Return card data from the database  
 
-## Tools currently being used
+### Tools currently being used
 
 Python  
 [lxml](https://lxml.de/)  
 [Requests](https://requests.readthedocs.io/en/master/)
 
-## Big Dreams
+### Big Dreams
 
 Retrieve card based on various search criteria e.g.  Color, Type, Name, P/T etc.  
 Retrieve multiple cards based on search criteria  
@@ -26,7 +28,7 @@ Retrieve card images
 Create an API to return the information in the database  
 Create a site to host and document the api  
 
-## Potential resources
+### Potential resources
 
 AWS Database  
 SQLAlchemy  
