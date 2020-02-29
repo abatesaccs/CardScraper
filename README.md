@@ -19,6 +19,7 @@ Expansion: Limited Edition Alpha
 Rarity: Rare  
 All Sets:  
 Artist: Christopher Rush  
+_This is currently missing card and icon images_
 
 ### MVP
 
