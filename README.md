@@ -50,7 +50,3 @@ AWS T2
 A Domain  
 Swagger  
 
-Notes:
-
-I am currently reding a book on python web scraping
-I have succesfully added pip and beautiful soup to the computer in class
