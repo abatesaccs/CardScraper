@@ -27,4 +27,4 @@ def Scrape():
 def Format(str):
     return re.sub(' +',' ',str.strip().replace('\r\n',''))
 
-Scrape()
+Scrape() 
