@@ -50,3 +50,4 @@ AWS T2
 A Domain  
 Swagger  
 
+I am currently researching connecting python to c# in order to make an api
