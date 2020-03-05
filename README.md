@@ -51,3 +51,4 @@ A Domain
 Swagger  
 
 I am currently researching connecting python to c# in order to make an api
+researching sql for python vs  c#
