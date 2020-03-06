@@ -15,11 +15,11 @@ def Scrape(multId):
       print('card path is incorrect')
 
     # /src() in the place of node() above may prove useful
-    
+
     try:
       mana_symbol = tree.xpath('//*[@id="ctl00_ctl00_ctl00_MainContent_SubContent_SubContent_manaRow"]/div[2]/img')
       num_icons = len(mana_symbol)
-      mana_cost = ''
+      mana_cost = ' '
       for i in range(num_icons):
         mana_cost += mana_symbol[i].get('alt')
         if(i != num_icons - 1):
@@ -34,12 +34,13 @@ def Scrape(multId):
     except:
       print('No beginning of text symbol or incorrect path')
 
-
-
     temp = ''
     for i in range(len(card_details)):
         if(str(card_details[i]).find('Element') != -1):
-          temp += Format(card_details[i].text_content()) + '\n'
+          if('Mana Cost' in card_details[i].text_content() and not ('Converted' in card_details[i].text_content())):
+            temp += Format(card_details[i].text_content()) + mana_cost + '\n'
+          else:
+            temp += Format(card_details[i].text_content()) + '\n'
     
     tempList = temp.split('\n')
 

@@ -92,3 +92,29 @@ Card Number: 64
 Artist: Zack Stella
 
 
+
+Card Name: Claim of Erebos
+Mana Cost:1, Black
+Converted Mana Cost: 21, Black
+Types: Enchantment — Aura
+Card Text: Enchant creatureEnchanted creature has ", : Target player loses 2 life."
+Flavor Text: Priests of Erebos give an occasional reminder to mortals who have forgotten their mortality.
+Expansion: 	 Born of the Gods
+Rarity: Common
+Card Number: 64
+Artist: Zack Stella
+
+
+
+Card Name: Claim of Erebos
+Mana Cost: 1, Black
+Converted Mana Cost: 2
+Types: Enchantment — Aura
+Card Text: Enchant creatureEnchanted creature has ", : Target player loses 2 life."
+Flavor Text: Priests of Erebos give an occasional reminder to mortals who have forgotten their mortality.
+Expansion: 	 Born of the Gods
+Rarity: Common
+Card Number: 64
+Artist: Zack Stella
+
+
