@@ -20,7 +20,7 @@ def Scrape():
     for i in range(len(tempList)):
         print(tempList[i])
  
-    f = open('text.txt', 'a+')
+    f = open('text.txt', 'ab+')
     f.write(temp.encode('utf8'))
     f.close()
 
