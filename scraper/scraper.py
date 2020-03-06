@@ -11,9 +11,18 @@ def Scrape(multId):
 
     card_details = tree.xpath('//*[@id="ctl00_ctl00_ctl00_MainContent_SubContent_SubContent_rightCol"]/div[2]/node()')
 
-    mana_symbol = tree.xpath('//*[@id="ctl00_ctl00_ctl00_MainContent_SubContent_SubContent_manaRow"]/div[2]/img')
+    try:
+      mana_symbol = tree.xpath('//*[@id="ctl00_ctl00_ctl00_MainContent_SubContent_SubContent_manaRow"]/div[2]/img')
+      print(mana_symbol[0].get('alt'))
+    except:
+      print('No mana symbol or incorrect path')
 
-    print(mana_symbol[0].get('alt'))
+    try:
+      tap_symbol = tree.xpath('//*[@id="ctl00_ctl00_ctl00_MainContent_SubContent_SubContent_textRow"]/div[2]/div/img')
+      print(tap_symbol[0].get('alt'))
+    except:
+      print('No beginning of text symbol or incorrect path')
+
 
     # /src() in the place of node() above may prove useful
     # /alt() as well assuming it exists... 
@@ -39,4 +48,4 @@ def Format(str):
 #   Scrape(i)
 #   time.sleep(.5)
 
-Scrape(3)
+Scrape(345)
