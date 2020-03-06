@@ -14,8 +14,6 @@ def Scrape(multId):
     except:
       print('card path is incorrect')
 
-    # /src() in the place of node() above may prove useful
-
     try:
       mana_symbol = tree.xpath('//*[@id="ctl00_ctl00_ctl00_MainContent_SubContent_SubContent_manaRow"]/div[2]/img')
       num_icons = len(mana_symbol)
@@ -44,12 +42,11 @@ def Scrape(multId):
         if(str(card_details[i]).find('Element') != -1):
           if('Mana Cost' in card_details[i].text_content() and not ('Converted' in card_details[i].text_content())):
             temp += Format(card_details[i].text_content()) + mana_cost + '\n'
-          # elif(num_icons > 1 and ', :' in card_details[i].text_content()):
-          #   print(card_details[i].getchildren())
-          #   print(card_details[i].getchildren()[1].getchildren()[0].getchildren())
-          #   temp += Format(card_details[i].text_content()) + '\n'
-          #   temp = re.sub(', ', body_symbol, temp)
-          #   print(' ')
+          elif(num_icons > 0):
+            textbox = tree.find_class('cardtextbox')
+            for j in len(textbox):
+              if(card_details[i] == textbox[j]):
+                print('in deep loop')
           else:
             temp += Format(card_details[i].text_content()) + '\n'
     
