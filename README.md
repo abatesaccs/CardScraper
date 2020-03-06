@@ -81,4 +81,5 @@ Even more impressive is that if you search for 'bog cat' it returns
 Which is the card 'Caterwauling Boggart', if the search can fit into a card regardless of order, it will return the card 
 
 
-currently messing aroung with xpath and lxml
+currently messing aroung with xpath and lxml  
+currently looking into ways of finding the exact information i need for all cards, notjust the ones i do manually
