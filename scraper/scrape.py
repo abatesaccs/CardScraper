@@ -42,11 +42,11 @@ def Scrape(multId):
         if(str(card_details[i]).find('Element') != -1):
           if('Mana Cost' in card_details[i].text_content() and not ('Converted' in card_details[i].text_content())):
             temp += Format(card_details[i].text_content()) + mana_cost + '\n'
-          elif(num_icons > 0):
-            textbox = tree.find_class('cardtextbox')
-            for j in len(textbox):
-              if(card_details[i] == textbox[j]):
-                print('in deep loop')
+          # elif(num_icons > 0):
+          #   textbox = tree.find_class('cardtextbox')
+          #   for j in range(len(textbox)):
+          #     if(card_details[i] == textbox):
+          #       print('in deep loop')
           else:
             temp += Format(card_details[i].text_content()) + '\n'
     

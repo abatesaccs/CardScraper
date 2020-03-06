@@ -317,3 +317,13 @@ Card Number: 322
 Artist: John Avon
 
 
+
+Card Name: Riptide Laboratory
+Types: Land
+Card Text: : Add ., : Return target Wizard you control to its owner's hand.
+Expansion: 	 Onslaught
+Rarity: Rare
+Card Number: 322
+Artist: John Avon
+
+
