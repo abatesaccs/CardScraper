@@ -44,6 +44,12 @@ def Scrape(multId):
         if(str(card_details[i]).find('Element') != -1):
           if('Mana Cost' in card_details[i].text_content() and not ('Converted' in card_details[i].text_content())):
             temp += Format(card_details[i].text_content()) + mana_cost + '\n'
+          # elif(num_icons > 1 and ', :' in card_details[i].text_content()):
+          #   print(card_details[i].getchildren())
+          #   print(card_details[i].getchildren()[1].getchildren()[0].getchildren())
+          #   temp += Format(card_details[i].text_content()) + '\n'
+          #   temp = re.sub(', ', body_symbol, temp)
+          #   print(' ')
           else:
             temp += Format(card_details[i].text_content()) + '\n'
     
@@ -63,4 +69,5 @@ def Format(str):
 #   Scrape(i)
 #   time.sleep(.5)
 
-Scrape(378436)
+# Scrape(247173) middle of the text
+Scrape(10704) # multiple sections

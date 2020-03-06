@@ -50,6 +50,32 @@ AWS T2
 A Domain  
 Swagger  
 
+### Potential Schema Structure
+
+        CardId
+        Card Name
+        Mana Cost
+        Converted Mana Cost
+        Card Type
+        Card Text
+        Flavor - optional
+        Expansion
+        Rarity
+        Sets - optional
+        Number
+        Artist
+
+### Potential API endpoints
+
+        Search/MultId/{id}
+        Search/Name/{name}
+
+### Classes 
+
+        Scrape() - Scrape the site for the card data
+        Format() - Format the card data; clean up the rough edges
+        Save() - Add the card to database
+
 ### Current task
 
 Find the values of card symbols and replace current blanks with appropriate text  

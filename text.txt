@@ -144,3 +144,176 @@ Card Number: 64
 Artist: Zack Stella
 
 
+
+Card Name: Claim of Erebos
+Mana Cost: 1, Black
+Converted Mana Cost: 2
+Types: Enchantment — Aura
+Card Text: Enchant creatureEnchanted creature has ", : Target player loses 2 life."
+Flavor Text: Priests of Erebos give an occasional reminder to mortals who have forgotten their mortality.
+Expansion: 	 Born of the Gods
+Rarity: Common
+Card Number: 64
+Artist: Zack Stella
+
+
+
+Card Name: Claim of Erebos
+Mana Cost: 1, Black
+Converted Mana Cost: 2
+Types: Enchantment — Aura
+Card Text: Enchant creatureEnchanted creature has ", : Target player loses 2 life."
+Flavor Text: Priests of Erebos give an occasional reminder to mortals who have forgotten their mortality.
+Expansion: 	 Born of the Gods
+Rarity: Common
+Card Number: 64
+Artist: Zack Stella
+
+
+
+Card Name: Claim of Erebos
+Mana Cost: 1, Black
+Converted Mana Cost: 2
+Types: Enchantment — Aura
+Card Text: Enchant creatureEnchanted creature has ", : Target player loses 2 life."
+Flavor Text: Priests of Erebos give an occasional reminder to mortals who have forgotten their mortality.
+Expansion: 	 Born of the Gods
+Rarity: Common
+Card Number: 64
+Artist: Zack Stella
+
+
+
+Card Name: Claim of Erebos
+Mana Cost: 1 1, Black, TapBlack
+Converted Mana Cost: 2
+Types: Enchantment — Aura
+Card Text: Enchant creatureEnchanted creature has " 1, Black, Tap: Target player loses 2 life."
+Flavor Text: Priests of Erebos give an occasional reminder to mortals who have forgotten their mortality.
+Expansion: 	 Born of the Gods
+Rarity: Common
+Card Number: 64
+Artist: Zack Stella
+
+
+
+Card Name: Claim of Erebos
+Mana Cost: 1 1, Black, TapBlack
+Converted Mana Cost: 2
+Types: Enchantment — Aura
+Card Text: Enchant creatureEnchanted creature has " 1, Black, Tap: Target player loses 2 life."
+Flavor Text: Priests of Erebos give an occasional reminder to mortals who have forgotten their mortality.
+Expansion: 	 Born of the Gods
+Rarity: Common
+Card Number: 64
+Artist: Zack Stella
+
+
+
+Card Name: Ghostly Prison
+Mana Cost: 2, White
+Converted Mana Cost: 3
+Types: Enchantment
+Card Text: Creatures can't attack you unless their controller pays for each creature they control that's attacking you.
+Flavor Text: "May the memory of our fallen heroes ensnare the violent hearts of lesser men."—Great Threshold of Monserkat inscription
+Expansion: 	 Magic: The Gathering-Commander
+Rarity: Uncommon
+All Sets:
+Card Number: 14
+Artist: Wayne England
+
+
+
+Card Name: Ghostly Prison
+Mana Cost: 2, White
+Converted Mana Cost: 3
+Types: Enchantment
+Card Text: Creatures can't attack you unless their controller pays for each creature they control that's attacking you.
+Flavor Text: "May the memory of our fallen heroes ensnare the violent hearts of lesser men."—Great Threshold of Monserkat inscription
+Expansion: 	 Magic: The Gathering-Commander
+Rarity: Uncommon
+All Sets:
+Card Number: 14
+Artist: Wayne England
+
+
+
+Card Name: Riptide Laboratory
+Types: Land
+Card Text: : Add . Tap, Colorless, 1, Blue, Tap: Return target Wizard you control to its owner's hand.
+Expansion: 	 Onslaught
+Rarity: Rare
+Card Number: 322
+Artist: John Avon
+
+
+
+Card Name: Riptide Laboratory
+Types: Land
+Card Text: : Add . Tap, Colorless, 1, Blue, Tap: Return target Wizard you control to its owner's hand.
+Expansion: 	 Onslaught
+Rarity: Rare
+Card Number: 322
+Artist: John Avon
+
+
+
+Card Name: Riptide Laboratory
+Types: Land
+Card Text: : Add . Tap, Colorless, 1, Blue, Tap: Return target Wizard you control to its owner's hand.
+Expansion: 	 Onslaught
+Rarity: Rare
+Card Number: 322
+Artist: John Avon
+
+
+
+Card Name: Riptide Laboratory
+Types: Land
+Card Text: : Add . Tap, Colorless, 1, Blue, Tap: Return target Wizard you control to its owner's hand.
+Expansion: 	 Onslaught
+Rarity: Rare
+Card Number: 322
+Artist: John Avon
+
+
+
+Card Name: Riptide Laboratory
+Types: Land
+Card Text: : Add . Tap, Colorless, 1, Blue, Tap: Return target Wizard you control to its owner's hand.
+Expansion: 	 Onslaught
+Rarity: Rare
+Card Number: 322
+Artist: John Avon
+
+
+
+Card Name: Riptide Laboratory
+Types: Land
+Card Text: : Add . Tap, Colorless, 1, Blue, Tap: Return target Wizard you control to its owner's hand.
+Expansion: 	 Onslaught
+Rarity: Rare
+Card Number: 322
+Artist: John Avon
+
+
+
+Card Name: Riptide Laboratory
+Types: Land
+Card Text: : Add . Tap, Colorless, 1, Blue, Tap: Return target Wizard you control to its owner's hand.
+Expansion: 	 Onslaught
+Rarity: Rare
+Card Number: 322
+Artist: John Avon
+
+
+
+Card Name: Riptide Laboratory
+Types: Land
+Card Text: : Add . Tap, Colorless, 1, Blue, Tap: Return target Wizard you control to its owner's hand.
+Expansion: 	 Onslaught
+Rarity: Rare
+Card Number: 322
+Artist: John Avon
+
+
