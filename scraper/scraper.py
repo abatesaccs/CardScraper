@@ -1,5 +1,6 @@
 import requests
 import re
+import time
 from lxml import html
 from lxml import etree
 import sched, time
@@ -27,4 +28,6 @@ def Scrape(multId):
 def Format(str):
     return re.sub(' +',' ',str.strip().replace('\r\n',''))
 
-Scrape(3)   
+for i in range(1,10):
+  Scrape(i)
+  time.sleep(.5)
