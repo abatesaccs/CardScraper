@@ -24,13 +24,18 @@ def Scrape(multId):
         mana_cost += mana_symbol[i].get('alt')
         if(i != num_icons - 1):
           mana_cost += ', '
-      print(mana_cost)
     except:
       print('No mana symbol or incorrect path')
 
     try:
       tap_symbol = tree.xpath('//*[@id="ctl00_ctl00_ctl00_MainContent_SubContent_SubContent_textRow"]/div[2]/div/img')
-      print(tap_symbol[0].get('alt'))
+      num_icons = len(tap_symbol)
+      body_symbol = ' '
+      for i in range(num_icons):
+        body_symbol += tap_symbol[i].get('alt')
+        if(i != num_icons - 1):
+          body_symbol += ', '
+      print(body_symbol)
     except:
       print('No beginning of text symbol or incorrect path')
 
