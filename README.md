@@ -49,8 +49,3 @@ AWS Lambda
 AWS T2  
 A Domain  
 Swagger  
-
-I am currently researching connecting python to c# in order to make an api  
-researching sql for python vs  c#  
-struggling to getpython working properly on my pc  
-Worst part is that it worked once, then just broke :/ pretty frustrating  

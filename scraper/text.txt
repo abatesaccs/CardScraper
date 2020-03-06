@@ -10,3 +10,27 @@ All Sets:
 Artist: Mark Tedin
 
 
+
+Card Name: Jayemdae Tome
+Mana Cost:
+Converted Mana Cost: 4
+Types: Artifact
+Card Text: , : Draw a card.
+Expansion: 	 Limited Edition Alpha
+Rarity: Rare
+All Sets:
+Artist: Mark Tedin
+
+
+
+Card Name: Black Lotus
+Mana Cost:
+Converted Mana Cost: 0
+Types: Artifact
+Card Text: , Sacrifice Black Lotus: Add three mana of any one color.
+Expansion: 	 Limited Edition Alpha
+Rarity: Rare
+All Sets:
+Artist: Christopher Rush
+
+
