@@ -12,3 +12,83 @@ All Sets:
 Artist: Christopher Rush
 
 
+
+Card Name: Lord of the Pit
+Mana Cost:
+Converted Mana Cost: 7
+Types: Creature — Demon
+Card Text: Flying, trampleAt the beginning of your upkeep, sacrifice a creature other than Lord of the Pit. If you can't, Lord of the Pit deals 7 damage to you.
+Flavor Text: "My summoning begins your debt, Planeswalker."
+P/T: 7 / 7
+Expansion: 	 Iconic Masters
+Rarity: Rare
+All Sets:
+Card Number: 96
+Artist: Chippy
+
+
+
+Card Name: Claim of Erebos
+Mana Cost:
+Converted Mana Cost: 2
+Types: Enchantment — Aura
+Card Text: Enchant creatureEnchanted creature has ", : Target player loses 2 life."
+Flavor Text: Priests of Erebos give an occasional reminder to mortals who have forgotten their mortality.
+Expansion: 	 Born of the Gods
+Rarity: Common
+Card Number: 64
+Artist: Zack Stella
+
+
+
+Card Name: Claim of Erebos
+Mana Cost:
+Converted Mana Cost: 2
+Types: Enchantment — Aura
+Card Text: Enchant creatureEnchanted creature has ", : Target player loses 2 life."
+Flavor Text: Priests of Erebos give an occasional reminder to mortals who have forgotten their mortality.
+Expansion: 	 Born of the Gods
+Rarity: Common
+Card Number: 64
+Artist: Zack Stella
+
+
+
+Card Name: Claim of Erebos
+Mana Cost:
+Converted Mana Cost: 2
+Types: Enchantment — Aura
+Card Text: Enchant creatureEnchanted creature has ", : Target player loses 2 life."
+Flavor Text: Priests of Erebos give an occasional reminder to mortals who have forgotten their mortality.
+Expansion: 	 Born of the Gods
+Rarity: Common
+Card Number: 64
+Artist: Zack Stella
+
+
+
+Card Name: Claim of Erebos
+Mana Cost:
+Converted Mana Cost: 2
+Types: Enchantment — Aura
+Card Text: Enchant creatureEnchanted creature has ", : Target player loses 2 life."
+Flavor Text: Priests of Erebos give an occasional reminder to mortals who have forgotten their mortality.
+Expansion: 	 Born of the Gods
+Rarity: Common
+Card Number: 64
+Artist: Zack Stella
+
+
+
+Card Name: Claim of Erebos
+Mana Cost:
+Converted Mana Cost: 2
+Types: Enchantment — Aura
+Card Text: Enchant creatureEnchanted creature has ", : Target player loses 2 life."
+Flavor Text: Priests of Erebos give an occasional reminder to mortals who have forgotten their mortality.
+Expansion: 	 Born of the Gods
+Rarity: Common
+Card Number: 64
+Artist: Zack Stella
+
+
