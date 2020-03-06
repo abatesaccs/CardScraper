@@ -36,3 +36,31 @@ All Sets:
 Artist: Jeff A. Menges
 
 
+
+Card Name: Black Knight
+Mana Cost:
+Converted Mana Cost: 2
+Types: Creature — Human Knight
+Card Text: First strike (This creature deals combat damage before creatures without first strike.)Protection from white (This creature can't be blocked, targeted, dealt damage, or enchanted by anything white.)
+Flavor Text: Battle doesn't need a purpose; the battle is its own purpose. You don't ask why a plague spreads or a field burns. Don't ask why I fight.
+P/T: 2 / 2
+Expansion: 	 Limited Edition Beta
+Rarity: Uncommon
+All Sets:
+Artist: Jeff A. Menges
+
+
+
+Card Name: Black Knight
+Mana Cost:
+Converted Mana Cost: 2
+Types: Creature — Human Knight
+Card Text: First strike (This creature deals combat damage before creatures without first strike.)Protection from white (This creature can't be blocked, targeted, dealt damage, or enchanted by anything white.)
+Flavor Text: Battle doesn't need a purpose; the battle is its own purpose. You don't ask why a plague spreads or a field burns. Don't ask why I fight.
+P/T: 2 / 2
+Expansion: 	 Limited Edition Beta
+Rarity: Uncommon
+All Sets:
+Artist: Jeff A. Menges
+
+

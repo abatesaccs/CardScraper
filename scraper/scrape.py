@@ -25,7 +25,6 @@ def Scrape(multId):
 
 
     # /src() in the place of node() above may prove useful
-    # /alt() as well assuming it exists... 
 
     temp = ''
     for i in range(len(card_details)):
