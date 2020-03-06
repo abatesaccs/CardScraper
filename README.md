@@ -49,3 +49,10 @@ AWS Lambda
 AWS T2  
 A Domain  
 Swagger  
+
+### Current task
+
+Find the values of card symbols and replace current blanks with appropriate text  
+
+Notes:  
+search for child elements with classes of 'value' in each element  

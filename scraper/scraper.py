@@ -11,10 +11,17 @@ def Scrape(multId):
 
     card_details = tree.xpath('//*[@id="ctl00_ctl00_ctl00_MainContent_SubContent_SubContent_rightCol"]/div[2]/node()')
 
+    mana_symbol = tree.xpath('//*[@id="ctl00_ctl00_ctl00_MainContent_SubContent_SubContent_manaRow"]/div[2]/img')
+
+    print(mana_symbol[0].get('alt'))
+
+    # /src() in the place of node() above may prove useful
+    # /alt() as well assuming it exists... 
+
     temp = ''
     for i in range(len(card_details)):
         if(str(card_details[i]).find('Element') != -1):
-            temp += Format(card_details[i].text_content()) + '\n'
+          temp += Format(card_details[i].text_content()) + '\n'
     
     tempList = temp.split('\n')
 
@@ -28,6 +35,8 @@ def Scrape(multId):
 def Format(str):
     return re.sub(' +',' ',str.strip().replace('\r\n',''))
 
-for i in range(1,10):
-  Scrape(i)
-  time.sleep(.5)
+# for i in range(1,10):
+#   Scrape(i)
+#   time.sleep(.5)
+
+Scrape(3)
