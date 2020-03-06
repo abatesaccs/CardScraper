@@ -55,4 +55,27 @@ Swagger
 Find the values of card symbols and replace current blanks with appropriate text  
 
 Notes:  
-search for child elements with classes of 'value' in each element  
+Search for child elements with classes of 'value' in each element  
+If there is only one result from a search it returns the cards page, if there are multiple results it returns a list of links to each card  
+The differences between search and card urls are such:  
+
+        Search/Default.aspx?name=+[rat]
+        Card/Details.aspx?multiverseid=29857  
+
+_note, this is the first card returned called acceleRATe, the serch is very accepting_
+ 
+Multiple words in a search are shown as:
+
+        Search/Default.aspx?name=+[bog]+[r]
+
+Additionally, the search 'bog rat' and 'bog rats' both return the url:  
+
+        Card/Details.aspx?multiverseid=2798
+
+Which is the card page for bog rats, if the search can only return one card even if the term is incomplete, it will return the card page  
+ 
+Even more impressive is that if you search for 'bog cat' it returns
+
+        Card/Details.aspx?multiverseid=139471
+
+Which is the card 'Caterwauling Boggart', if the search can fit into a card regardless of order, it will return the card
