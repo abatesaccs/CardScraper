@@ -1,10 +1,14 @@
 import requests
 import re
 import time
+import sqlite3
 # from format import formatted
 from lxml import html
 from lxml import etree
 import sched, time
+
+connection = sqlite3.connect('cardTable.db')
+crsr = connection.cursor()
 
 def Scrape(multId):
     card_page = requests.get(f'https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid={multId}')
@@ -66,6 +70,8 @@ def formatted(str):
 # for i in range(1,10):
 #   Scrape(i)
 #   time.sleep(.5)
+
+connection.close()
 
 # Scrape(247173) middle of the text
 Scrape(10704) # multiple sections
