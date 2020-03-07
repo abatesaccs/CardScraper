@@ -2,13 +2,29 @@ import requests
 import re
 import time
 import sqlite3
-# from format import formatted
 from lxml import html
 from lxml import etree
 import sched, time
 
-connection = sqlite3.connect('cardTable.db')
-crsr = connection.cursor()
+connection = sqlite3.connect(':memory:')
+c = connection.cursor()
+
+# need to check if the table is created when using the file db
+with connection:
+  c.execute('''CREATE TABLE cards (
+      cardId integer,
+      name text,
+      manaCost text,
+      convertedManaCost integer,
+      type text,
+      body text,
+      flavor text,
+      expansion text,
+      rarity text,
+      sets text,
+      number integer,
+      artist text
+      )''')
 
 def Scrape(multId):
     card_page = requests.get(f'https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid={multId}')
@@ -67,6 +83,7 @@ def Scrape(multId):
 def formatted(str):
   return re.sub(' +',' ',str.strip().replace('\r\n',''))
 
+# pull multiple cards by multId
 # for i in range(1,10):
 #   Scrape(i)
 #   time.sleep(.5)
@@ -74,4 +91,4 @@ def formatted(str):
 connection.close()
 
 # Scrape(247173) middle of the text
-Scrape(10704) # multiple sections
+# Scrape(10704) multiple sections
