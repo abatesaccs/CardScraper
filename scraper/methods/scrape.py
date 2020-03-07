@@ -1,6 +1,7 @@
 import requests
 import re
 import time
+# from format import formatted
 from lxml import html
 from lxml import etree
 import sched, time
@@ -41,14 +42,14 @@ def Scrape(multId):
     for i in range(len(card_details)):
         if(str(card_details[i]).find('Element') != -1):
           if('Mana Cost' in card_details[i].text_content() and not ('Converted' in card_details[i].text_content())):
-            temp += Format(card_details[i].text_content()) + mana_cost + '\n'
+            temp += formatted(card_details[i].text_content()) + mana_cost + '\n'
           # elif(num_icons > 0):
           #   textbox = tree.find_class('cardtextbox')
           #   for j in range(len(textbox)):
           #     if(card_details[i] == textbox):
           #       print('in deep loop')
           else:
-            temp += Format(card_details[i].text_content()) + '\n'
+            temp += formatted(card_details[i].text_content()) + '\n'
     
     tempList = temp.split('\n')
 
@@ -59,8 +60,8 @@ def Scrape(multId):
     f.write(temp.encode('utf8'))
     f.close()
 
-def Format(str):
-    return re.sub(' +',' ',str.strip().replace('\r\n',''))
+def formatted(str):
+  return re.sub(' +',' ',str.strip().replace('\r\n',''))
 
 # for i in range(1,10):
 #   Scrape(i)

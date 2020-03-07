@@ -54,8 +54,8 @@ Swagger
 
         CardId
         Card Name
-        Mana Cost
-        Converted Mana Cost
+        Mana Cost - optional
+        Converted Mana Cost - optional
         Card Type
         Card Text
         Flavor - optional
