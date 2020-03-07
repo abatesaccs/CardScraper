@@ -6,25 +6,27 @@ from lxml import html
 from lxml import etree
 import sched, time
 
-connection = sqlite3.connect(':memory:')
+connection = sqlite3.connect('cardTable.db')
 c = connection.cursor()
 
-# need to check if the table is created when using the file db
-with connection:
-  c.execute('''CREATE TABLE cards (
-      cardId integer,
-      name text,
-      manaCost text,
-      convertedManaCost integer,
-      type text,
-      body text,
-      flavor text,
-      expansion text,
-      rarity text,
-      sets text,
-      number integer,
-      artist text
-      )''')
+try:
+  with connection:
+    c.execute('''CREATE TABLE cards (
+        cardId integer,
+        name text,
+        manaCost text,
+        convertedManaCost integer,
+        type text,
+        body text,
+        flavor text,
+        expansion text,
+        rarity text,
+        sets text,
+        number integer,
+        artist text
+        )''')
+except:
+  print('Table Already Made')
 
 def Scrape(multId):
     card_page = requests.get(f'https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid={multId}')
