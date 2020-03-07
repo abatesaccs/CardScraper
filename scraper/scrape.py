@@ -60,6 +60,8 @@ def Scrape(multId):
     except:
       print('No beginning of text symbol or incorrect path')
 
+    # Use label and value classes in elements to separate key and value for use in Card class
+
     temp = ''
     for i in range(len(card_details)):
         if(str(card_details[i]).find('Element') != -1):
