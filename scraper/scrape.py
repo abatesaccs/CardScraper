@@ -29,7 +29,8 @@ try:
 except:
   print('Table Already Made')
 
-def Scrape(multId):
+def Scrape(multId, numCards):
+  for x in range(numCards):
     card_page = requests.get(f'https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid={multId}')
     tree = html.fromstring(card_page.content)
     card_dict = {}
@@ -62,6 +63,18 @@ def Scrape(multId):
     except:
       print('No beginning of text symbol or incorrect path')
 
+    try:
+      sets_symbol = tree.xpath('//*[@id="ctl00_ctl00_ctl00_MainContent_SubContent_SubContent_otherSetsValue"]/div/a/img')
+      num_icons = len(sets_symbol)
+      set_text_list = ' '
+      for i in range(num_icons):
+        set_text_list += sets_symbol[i].get('alt')
+        if(i != num_icons - 1):
+          set_text_list += ', '
+      print(set_text_list)
+    except:
+      print('No only one set or incorrect path')
+
     # Use label and value classes in elements to separate key and value for use in Card class
 
     temp_string = ''
@@ -72,13 +85,15 @@ def Scrape(multId):
             temp_string += formatted(card_details[i].text_content()) + mana_cost + '\n'
             temp_item = formatted(card_details[i][0].text_content())
             card_dict[keyFormat(temp_item)] = mana_cost
-            print(temp_string)
-            print(card_dict['Mana Cost'])
           # elif(num_icons > 0):
           #   textbox = tree.find_class('cardtextbox')
           #   for j in range(len(textbox)):
           #     if(card_details[i] == textbox):
           #       print('in deep loop')
+          elif('All Sets' in card_details[i].text_content()):
+            temp_string += formatted(card_details[i].text_content()) + set_text_list + '\n'
+            temp_item = formatted(card_details[i][0].text_content())
+            card_dict[keyFormat(temp_item)] = set_text_list
           else:
             temp_string += formatted(card_details[i].text_content()) + '\n'
             temp_item = formatted(card_details[i][0].text_content())
@@ -86,10 +101,6 @@ def Scrape(multId):
               card_dict[keyFormat(temp_item)] = formatted(card_details[i][1].text_content())
             except:
               print('Index out of bounds')
-
-    for i in card_dict:
-      print(i)
-      print(card_dict[i])
     
     tempList = temp_string.split('\n')
 
@@ -99,6 +110,7 @@ def Scrape(multId):
     f = open('text.txt', 'ab+')
     f.write(temp_string.encode('utf8'))
     f.close()
+    time.sleep(.5)
 
 def formatted(str):
   return re.sub(' +',' ',str.strip().replace('\r\n',''))
