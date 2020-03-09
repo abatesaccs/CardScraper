@@ -64,33 +64,47 @@ def Scrape(multId):
 
     # Use label and value classes in elements to separate key and value for use in Card class
 
-    temp = ''
+    temp_string = ''
+    temp_item = ''
     for i in range(len(card_details)):
         if(str(card_details[i]).find('Element') != -1):
           if('Mana Cost' in card_details[i].text_content() and not ('Converted' in card_details[i].text_content())):
-            temp += formatted(card_details[i].text_content()) + mana_cost + '\n'
-            card_dict[temp] = 'test'
-            print(temp)
-            print(card_dict[temp])
+            temp_string += formatted(card_details[i].text_content()) + mana_cost + '\n'
+            temp_item = formatted(card_details[i][0].text_content())
+            card_dict[keyFormat(temp_item)] = mana_cost
+            print(temp_string)
+            print(card_dict['Mana Cost'])
           # elif(num_icons > 0):
           #   textbox = tree.find_class('cardtextbox')
           #   for j in range(len(textbox)):
           #     if(card_details[i] == textbox):
           #       print('in deep loop')
           else:
-            temp += formatted(card_details[i].text_content()) + '\n'
+            temp_string += formatted(card_details[i].text_content()) + '\n'
+            temp_item = formatted(card_details[i][0].text_content())
+            try:
+              card_dict[keyFormat(temp_item)] = formatted(card_details[i][1].text_content())
+            except:
+              print('Index out of bounds')
+
+    for i in card_dict:
+      print(i)
+      print(card_dict[i])
     
-    tempList = temp.split('\n')
+    tempList = temp_string.split('\n')
 
     for i in range(len(tempList)):
         print(tempList[i])
  
     f = open('text.txt', 'ab+')
-    f.write(temp.encode('utf8'))
+    f.write(temp_string.encode('utf8'))
     f.close()
 
 def formatted(str):
   return re.sub(' +',' ',str.strip().replace('\r\n',''))
+
+def keyFormat(str):
+  return re.sub(':', '', str.strip())
 
 # pull multiple cards by multId
 # for i in range(1,10):
