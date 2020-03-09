@@ -6,7 +6,8 @@ from lxml import html
 from lxml import etree
 import sched, time
 
-connection = sqlite3.connect('cardTable.db')
+# connection = sqlite3.connect('cardTable.db')
+connection = sqlite3.connect(':memory:')
 c = connection.cursor()
 
 try:
@@ -31,6 +32,7 @@ except:
 def Scrape(multId):
     card_page = requests.get(f'https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid={multId}')
     tree = html.fromstring(card_page.content)
+    card_dict = {}
 
     try:
       card_details = tree.xpath('//*[@id="ctl00_ctl00_ctl00_MainContent_SubContent_SubContent_rightCol"]/div[2]/node()')
@@ -67,6 +69,9 @@ def Scrape(multId):
         if(str(card_details[i]).find('Element') != -1):
           if('Mana Cost' in card_details[i].text_content() and not ('Converted' in card_details[i].text_content())):
             temp += formatted(card_details[i].text_content()) + mana_cost + '\n'
+            card_dict[temp] = 'test'
+            print(temp)
+            print(card_dict[temp])
           # elif(num_icons > 0):
           #   textbox = tree.find_class('cardtextbox')
           #   for j in range(len(textbox)):
