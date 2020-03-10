@@ -9,7 +9,7 @@ from card import *
 import sched, time
 
 
-def Scrape(multId, numCards):
+def Scrape(multId, numCards = 1):
   # connection = sqlite3.connect('cardTable.db')
   connection = sqlite3.connect(':memory:')
   c = connection.cursor()
@@ -106,52 +106,7 @@ def Scrape(multId, numCards):
     my_card = Card(card_dict)
     my_card.populate()
 
-    table_columns = []
-    table_values = []
-    for i in card_dict:
-      if(i == 'Multiverse Id'):
-        table_columns.append("cardId")
-        table_values.append(card_dict[i])
-      elif(i == 'Card Name'):
-        table_columns.append("name")
-        table_values.append(card_dict[i])
-      elif(i == 'Mana Cost'):
-        table_columns.append("manaCost")
-        table_values.append(card_dict[i])
-      elif(i == 'Converted Mana Cost'):
-        table_columns.append("convertedManaCost")
-        table_values.append(card_dict[i])
-      elif(i == 'Type'):
-        table_columns.append("type")
-        table_values.append(card_dict[i])
-      elif(i == 'Card Text'):
-        table_columns.append("body")
-        table_values.append(card_dict[i])
-      elif(i == 'Flavor Text'):
-        table_columns.append("flavor")
-        table_values.append(card_dict[i])
-      elif(i == 'Expansion'):
-        table_columns.append("expansion")
-        table_values.append(card_dict[i])
-      elif(i == 'Rarity'):
-        table_columns.append("rarity")
-        table_values.append(card_dict[i])
-      elif(i == 'All Sets'):
-        table_columns.append("sets")
-        table_values.append(card_dict[i])
-      elif(i == 'Card Number'):
-        table_columns.append("number")
-        table_values.append(card_dict[i])
-      elif(i == 'Artist'):
-        table_columns.append("artist")
-        table_values.append(card_dict[i])
-
-    for i in range(len(table_columns)):
-      with connection:
-        if(i == 0):
-          c.execute(f"INSERT INTO cards ({json.dumps(table_columns[i])}) VALUES ({table_values[i]})")
-        else:
-          c.execute(f'UPDATE cards SET {json.dumps(table_columns[i])} = ? WHERE cardId = {table_values[0]}',(table_values[i],))
+    addCard(my_card, c, connection)
 
     c.execute('SELECT * FROM cards')
     print(c.fetchall())
@@ -173,7 +128,53 @@ def formatted(str):
 def keyFormat(str):
   return re.sub(':', '', str.strip())
 
+def addCard(card, c, connection):
+  table_columns = []
+  table_values = []
+  for i in card.card_data:
+    if(i == 'Multiverse Id'):
+      table_columns.append("cardId")
+      table_values.append(card.card_data[i])
+    elif(i == 'Card Name'):
+      table_columns.append("name")
+      table_values.append(card.card_data[i])
+    elif(i == 'Mana Cost'):
+      table_columns.append("manaCost")
+      table_values.append(card.card_data[i])
+    elif(i == 'Converted Mana Cost'):
+      table_columns.append("convertedManaCost")
+      table_values.append(card.card_data[i])
+    elif(i == 'Type'):
+      table_columns.append("type")
+      table_values.append(card.card_data[i])
+    elif(i == 'Card Text'):
+      table_columns.append("body")
+      table_values.append(card.card_data[i])
+    elif(i == 'Flavor Text'):
+      table_columns.append("flavor")
+      table_values.append(card.card_data[i])
+    elif(i == 'Expansion'):
+      table_columns.append("expansion")
+      table_values.append(card.card_data[i])
+    elif(i == 'Rarity'):
+      table_columns.append("rarity")
+      table_values.append(card.card_data[i])
+    elif(i == 'All Sets'):
+      table_columns.append("sets")
+      table_values.append(card.card_data[i])
+    elif(i == 'Card Number'):
+      table_columns.append("number")
+      table_values.append(card.card_data[i])
+    elif(i == 'Artist'):
+      table_columns.append("artist")
+      table_values.append(card.card_data[i])
 
+  for i in range(len(table_columns)):
+      with connection:
+        if(i == 0):
+          c.execute(f"INSERT INTO cards ({json.dumps(table_columns[i])}) VALUES ({table_values[i]})")
+        else:
+          c.execute(f'UPDATE cards SET {json.dumps(table_columns[i])} = ? WHERE cardId = {table_values[0]}',[table_values[i]])
 
 # Scrape(247173) middle of the text
 # Scrape(10704) multiple sections
