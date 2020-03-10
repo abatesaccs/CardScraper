@@ -2,17 +2,20 @@ import requests
 import re
 import time
 import sqlite3
+import json
 from lxml import html
 from lxml import etree
+from card import *
 import sched, time
 
-# connection = sqlite3.connect('cardTable.db')
-connection = sqlite3.connect(':memory:')
-c = connection.cursor()
 
-try:
+def Scrape(multId, numCards):
+  # connection = sqlite3.connect('cardTable.db')
+  connection = sqlite3.connect(':memory:')
+  c = connection.cursor()
+
   with connection:
-    c.execute('''CREATE TABLE cards (
+    c.execute("""CREATE TABLE IF NOT EXISTS cards (
         cardId integer,
         name text,
         manaCost text,
@@ -25,15 +28,15 @@ try:
         sets text,
         number integer,
         artist text
-        )''')
-except:
-  print('Table Already Made')
-
-def Scrape(multId, numCards):
+        )""")
+  
   for x in range(numCards):
+    multId += x
     card_page = requests.get(f'https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid={multId}')
     tree = html.fromstring(card_page.content)
-    card_dict = {}
+    card_dict = {
+      'Multiverse Id': multId
+    }
 
     try:
       card_details = tree.xpath('//*[@id="ctl00_ctl00_ctl00_MainContent_SubContent_SubContent_rightCol"]/div[2]/node()')
@@ -59,7 +62,6 @@ def Scrape(multId, numCards):
         body_symbol += tap_symbol[i].get('alt')
         if(i != num_icons - 1):
           body_symbol += ', '
-      print(body_symbol)
     except:
       print('No beginning of text symbol or incorrect path')
 
@@ -71,7 +73,6 @@ def Scrape(multId, numCards):
         set_text_list += sets_symbol[i].get('alt')
         if(i != num_icons - 1):
           set_text_list += ', '
-      print(set_text_list)
     except:
       print('No only one set or incorrect path')
 
@@ -100,8 +101,61 @@ def Scrape(multId, numCards):
             try:
               card_dict[keyFormat(temp_item)] = formatted(card_details[i][1].text_content())
             except:
-              print('Index out of bounds')
+              continue
     
+    my_card = Card(card_dict)
+    my_card.populate()
+
+    table_columns = []
+    table_values = []
+    for i in card_dict:
+      if(i == 'Multiverse Id'):
+        table_columns.append("cardId")
+        table_values.append(card_dict[i])
+      elif(i == 'Card Name'):
+        table_columns.append("name")
+        table_values.append(card_dict[i])
+      elif(i == 'Mana Cost'):
+        table_columns.append("manaCost")
+        table_values.append(card_dict[i])
+      elif(i == 'Converted Mana Cost'):
+        table_columns.append("convertedManaCost")
+        table_values.append(card_dict[i])
+      elif(i == 'Type'):
+        table_columns.append("type")
+        table_values.append(card_dict[i])
+      elif(i == 'Card Text'):
+        table_columns.append("body")
+        table_values.append(card_dict[i])
+      elif(i == 'Flavor Text'):
+        table_columns.append("flavor")
+        table_values.append(card_dict[i])
+      elif(i == 'Expansion'):
+        table_columns.append("expansion")
+        table_values.append(card_dict[i])
+      elif(i == 'Rarity'):
+        table_columns.append("rarity")
+        table_values.append(card_dict[i])
+      elif(i == 'All Sets'):
+        table_columns.append("sets")
+        table_values.append(card_dict[i])
+      elif(i == 'Card Number'):
+        table_columns.append("number")
+        table_values.append(card_dict[i])
+      elif(i == 'Artist'):
+        table_columns.append("artist")
+        table_values.append(card_dict[i])
+
+    for i in range(len(table_columns)):
+      with connection:
+        if(i == 0):
+          c.execute(f"INSERT INTO cards ({json.dumps(table_columns[i])}) VALUES ({table_values[i]})")
+        else:
+          c.execute(f'UPDATE cards SET {json.dumps(table_columns[i])} = ? WHERE cardId = {table_values[0]}',(table_values[i],))
+
+    c.execute('SELECT * FROM cards')
+    print(c.fetchall())
+
     tempList = temp_string.split('\n')
 
     for i in range(len(tempList)):
@@ -111,6 +165,7 @@ def Scrape(multId, numCards):
     f.write(temp_string.encode('utf8'))
     f.close()
     time.sleep(.5)
+  connection.close()
 
 def formatted(str):
   return re.sub(' +',' ',str.strip().replace('\r\n',''))
@@ -118,12 +173,7 @@ def formatted(str):
 def keyFormat(str):
   return re.sub(':', '', str.strip())
 
-# pull multiple cards by multId
-# for i in range(1,10):
-#   Scrape(i)
-#   time.sleep(.5)
 
-connection.close()
 
 # Scrape(247173) middle of the text
 # Scrape(10704) multiple sections

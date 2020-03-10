@@ -1,3 +1,3 @@
 from scrape import Scrape
 
-Scrape(3,1)
+Scrape(3,2)
