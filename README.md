@@ -32,6 +32,7 @@ Return card data from the database
 Python  
 [lxml](https://lxml.de/)  
 [Requests](https://requests.readthedocs.io/en/master/)
+[SQLite](https://www.sqlite.org/index.html)
 
 ### Big Dreams
 
