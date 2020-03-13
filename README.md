@@ -81,8 +81,7 @@ Swagger
 
 Find the values of card symbols and replace current blanks with appropriate text  
 
-Notes:  
-Search for child elements with classes of 'value' in each element  
+Notes:    
 If there is only one result from a search it returns the cards page, if there are multiple results it returns a list of links to each card  
 The differences between search and card urls are such:  
 
